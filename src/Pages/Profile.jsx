@@ -15,7 +15,7 @@ const Profile = ({ user }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const resp = await fetch("http://localhost:3001/api/v1/watchlist", {
+        const resp = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/watchlist`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -34,7 +34,7 @@ const Profile = ({ user }) => {
   const addList = async (listName) => {
     try {
       const resp = await fetch(
-        `http://localhost:3001/api/v1/watchlist/create?name=${listName}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/watchlist/create?name=${listName}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -62,7 +62,7 @@ const Profile = ({ user }) => {
     console.log('changing', id);
     try {
      const resp = await fetch(
-        `http://localhost:3001/api/v1/watchlist/${id}`, {
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/watchlist/${id}`, {
           method: method,
           headers: {
             Authorization: `Bearer ${user.token}`,
