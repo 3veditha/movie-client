@@ -10,7 +10,7 @@ const Home = ({user}) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const resp = await fetch("http://localhost:3001/api/v1/watchlist", {
+        const resp = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/watchlist`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -52,7 +52,7 @@ const Home = ({user}) => {
 
     try {
       const resp = await fetch(
-        `http://localhost:3001/api/v1/watchlist/${listId}/${movieId}`, {
+        `${process.env.REACT_APP_SERVER_URL}/watchlist/${listId}/${movieId}`, {
            headers: {
             Authorization: `Bearer ${user.token}`,
           },
