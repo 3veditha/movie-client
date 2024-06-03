@@ -54,7 +54,7 @@ const WatchList = ({ user }) => {
   const deleteMovie = async (listId,movieId) => {
   
     const resp = await fetch(
-      `http://localhost:3001/api/v1/watchlist/${listId}/${movieId}`, {
+      `${REACT_APP_SERVER_URL}/${listId}/${movieId}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${user.token}`
