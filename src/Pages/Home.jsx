@@ -52,7 +52,7 @@ const Home = ({user}) => {
 
     try {
       const resp = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/watchlist/${listId}/${movieId}`, {
+        `${process.env.REACT_APP_SERVER_URL}/api/v1watchlist/${listId}/${movieId}`, {
            headers: {
             Authorization: `Bearer ${user.token}`,
           },
