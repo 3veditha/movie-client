@@ -10,7 +10,7 @@ const WatchList = ({ user }) => {
   useEffect(() => {
     const getList = async () => {
       const resp = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/${listId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/watchlist/${listId}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
